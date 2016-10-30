@@ -15,7 +15,7 @@
 
 
     <dependencies>
-    
+    <!--
 		<dependency>
 		    <groupId>jdk.tools</groupId>
 		    <artifactId>jdk.tools</artifactId>
@@ -23,7 +23,7 @@
 		    <scope>system</scope>
 		    <systemPath>${JAVA_HOME}/lib/tools.jar</systemPath>
 		</dependency>
-
+-->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-web</artifactId>
