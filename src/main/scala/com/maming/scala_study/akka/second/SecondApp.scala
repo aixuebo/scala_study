@@ -1,6 +1,6 @@
 package com.maming.scala_study.akka.second
 
-import akka.actor.{Props, ActorSystem}
+import akka.actor.{ExtendedActorSystem, Props, ActorSystem}
 import com.maming.scala_study.akka.first.TeacherProtocol.InitSignal
 
 /**
@@ -11,6 +11,10 @@ object SecondApp  extends App{
 
   //Initialize the ActorSystem
   val actorSystem=ActorSystem("UniversityMessageSystem")
+
+  val address = actorSystem.asInstanceOf[ExtendedActorSystem].provider.getDefaultAddress
+  println("address===>"+address) //akka://UniversityMessageSystem
+  println("address===>"+address.host) //None
 
   //construct the Teacher Actor Ref
   val teacherActorRef = actorSystem.actorOf(Props[TeacherActor],"teacher")
